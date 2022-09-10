@@ -22,14 +22,21 @@
 # nico.say_hello()
 #
 class Dog:
-    def woof(self):
-        print("woofwoof")
+    def __init__(self, name):
+        self.name = name
+
+    def __str__(self):
+        print(super().__str__())
+        return f"dog: {self.name}"
+
+    def __getattribute__(self, name):
+        print(f"they want to get {name}")
+        return "😂"
 
 
-class Beagle(Dog):
-    def woof(self):
-        super().woof()
-        print("jump")
-
-beagle = Beagle()
-beagle.woof()
+jia = Dog("jia")
+print(jia)
+paul = Dog("Paul")
+print(paul)
+print(dir(jia))
+print(jia.name)
