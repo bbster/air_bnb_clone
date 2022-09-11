@@ -1,3 +1,4 @@
 air_bnb_env/
 .idea/
 config
+db.sqlite3
